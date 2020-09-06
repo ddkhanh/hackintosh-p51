@@ -16,32 +16,7 @@
 			<key>NoOemTableId</key>
 			<false/>
 		</dict>
-		<key>DropTables</key>
-		<array>
-			<dict>
-				<key>Signature</key>
-				<string>#MCFG</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>DMAR</string>
-			</dict>
-			<dict>
-				<key>TableId</key>
-				<string>xh_rvp10</string>
-				<key>Signature</key>
-				<string>SSDT</string>
-			</dict>
-		</array>
-		<key>DisabledAML</key>
-		<array>
-			<string>SSDT.aml</string>
-			<string>SSDT-XCPM.aml</string>
-			<string>SSDT-PluginType1.aml</string>
-		</array>
-		<key>Comment-DisabledAML</key>
-		<string>Disable other forms of CPU PM due to SSDT/Generate/PluginType=true</string>
-		<key>FixHeaders</key>
+		<key>AutoMerge</key>
 		<true/>
 		<key>DSDT</key>
 		<dict>
@@ -51,21 +26,31 @@
 				<false/>
 				<key>FixRTC</key>
 				<false/>
-				<key>Comment-IRQ Fix</key>
-				<string>The following fixes may be needed for onboard audio/USB/etc</string>
 				<key>FixTMR</key>
 				<false/>
 				<key>AddPNLF</key>
+				<false/>
+				<key>FixUSB</key>
 				<false/>
 				<key>FixShutdown</key>
 				<false/>
 				<key>FixIPIC</key>
 				<false/>
+				<key>Comment-IRQ Fix</key>
+				<string>The following fixes may be needed for onboard audio/USB/etc</string>
 			</dict>
 			<key>DropOEM_DSM</key>
 			<false/>
 		</dict>
-		<key>AutoMerge</key>
+		<key>Comment-DisabledAML</key>
+		<string>Disable other forms of CPU PM due to SSDT/Generate/PluginType=true</string>
+		<key>DisabledAML</key>
+		<array>
+			<string>SSDT.aml</string>
+			<string>SSDT-XCPM.aml</string>
+			<string>SSDT-PluginType1.aml</string>
+		</array>
+		<key>FixHeaders</key>
 		<true/>
 	</dict>
 	<key>Boot</key>
@@ -75,7 +60,7 @@
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>Arguments</key>
-		<string>dart=0 alcid=29 -cdfon -v</string>
+		<string>dart=0 alcid=29 -cdfon -igfxhdmidivs</string>
 		<key>NeverHibernate</key>
 		<true/>
 		<key>Secure</key>
@@ -149,61 +134,35 @@
 	</dict>
 	<key>Devices</key>
 	<dict>
+		<key>SetIntelMaxBacklight</key>
+		<false/>
 		<key>FakeID</key>
 		<dict>
 			<key>#Kaby Lake-Comment</key>
 			<string>To avoid automatic Clover fake device-id (Skylake) injection</string>
 		</dict>
-		<key>SetIntelBacklight</key>
-		<false/>
-		<key>Audio</key>
-		<dict>
-			<key>Inject</key>
-			<integer>29</integer>
-		</dict>
-		<key>SetIntelMaxBacklight</key>
-		<false/>
-		<key>IntelMaxValue</key>
-		<string>0x0710</string>
 		<key>Properties</key>
 		<dict>
-			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
-			<dict>
-				<key>hda-gfx</key>
-				<string>onboard-1</string>
-				<key>layout-id</key>
-				<integer>29</integer>
-			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
 				<key>framebuffer-con2-pipe</key>
 				<data>EgAAAA==</data>
 				<key>framebuffer-unifiedmem</key>
 				<data>AAAAgA==</data>
-				<key>model</key>
-				<string>Intel HD Graphics 630</string>
 				<key>framebuffer-stolenmem</key>
 				<data>AAAwAQ==</data>
 				<key>device-id</key>
-				<data>FlkAAA==</data>
+				<data>G1kAAA==</data>
 				<key>framebuffer-con1-pipe</key>
 				<data>EgAAAA==</data>
 				<key>framebuffer-fbmem</key>
 				<data>AACQAA==</data>
-				<key>hda-gfx</key>
-				<string>onboard-1</string>
-				<key>enable-hdmi-dividers-fix</key>
-				<data>AQAAAA==</data>
 				<key>framebuffer-patch-enable</key>
-				<data>AQAAAA==</data>
-				<key>enable-hdmi20</key>
 				<data>AQAAAA==</data>
 				<key>framebuffer-con0-pipe</key>
 				<data>EgAAAA==</data>
-				<key>AAPL,slot-name</key>
-				<string>Internal</string>
 				<key>AAPL,ig-platform-id</key>
-				<data>AAAWWQ==</data>
+				<data>AAAbWQ==</data>
 				<key>framebuffer-con2-enable</key>
 				<data>AQAAAA==</data>
 				<key>framebuffer-con1-enable</key>
@@ -211,6 +170,11 @@
 				<key>framebuffer-con0-enable</key>
 				<data>AQAAAA==</data>
 			</dict>
+		</dict>
+		<key>Audio</key>
+		<dict>
+			<key>Inject</key>
+			<string>No</string>
 		</dict>
 		<key>USB</key>
 		<dict>
@@ -221,6 +185,8 @@
 			<key>Inject</key>
 			<true/>
 		</dict>
+		<key>SetIntelBacklight</key>
+		<false/>
 	</dict>
 	<key>DisableDrivers</key>
 	<array>
@@ -232,11 +198,6 @@
 		<dict>
 			<key>Inject</key>
 			<false/>
-		</dict>
-		<key>Inject</key>
-		<dict>
-			<key>Intel</key>
-			<true/>
 		</dict>
 	</dict>
 	<key>KernelAndKextPatches</key>
@@ -257,7 +218,7 @@
 		<key>BooterConfig</key>
 		<string>0x28</string>
 		<key>CsrActiveConfig</key>
-		<string>0x67</string>
+		<string>0x3E7</string>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>

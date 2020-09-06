@@ -1,42 +1,37 @@
 
-Clover EFI installer log - Mon Aug 31 16:14:22 +07 2020
-Installer version: r5121 (commit: 2607bd4fb) EFI bootloader
+Clover EFI installer log - Sat Sep  5 12:53:03 +07 2020
+Installer version: r5122 (commit: 1fe7cc1cf) EFI bootloader
 ======================================================
 /dev/disk0 (internal, physical):
    #:                       TYPE NAME                    SIZE       IDENTIFIER
-   0:      GUID_partition_scheme                        *256.1 GB   disk0
-   1:                        EFI YES                     272.6 MB   disk0s1
-   2:         Microsoft Reserved                         16.8 MB    disk0s2
-   3:       Microsoft Basic Data Windows                 254.1 GB   disk0s3
-   4:           Windows Recovery                         645.9 MB   disk0s4
-   5:           Windows Recovery                         1.0 GB     disk0s5
+   0:      GUID_partition_scheme                        *240.1 GB   disk0
+   1:                        EFI EFI                     209.7 MB   disk0s1
+   2:                 Apple_APFS Container disk1         239.8 GB   disk0s2
 
-/dev/disk1 (internal, physical):
+/dev/disk1 (synthesized):
    #:                       TYPE NAME                    SIZE       IDENTIFIER
-   0:      GUID_partition_scheme                        *240.1 GB   disk1
-   1:                        EFI EFI                     209.7 MB   disk1s1
-   2:                 Apple_APFS Container disk2         239.8 GB   disk1s2
+   0:      APFS Container Scheme -                      +239.8 GB   disk1
+                                 Physical Store disk0s2
+   1:                APFS Volume macOS - Data            43.1 GB    disk1s1
+   2:                APFS Volume Preboot                 163.4 MB   disk1s2
+   3:                APFS Volume Recovery                1.0 GB     disk1s3
+   4:                APFS Volume VM                      1.1 MB     disk1s4
+   5:                APFS Volume macOS                   11.4 GB    disk1s5
 
-/dev/disk2 (synthesized):
+/dev/disk2 (external, physical):
    #:                       TYPE NAME                    SIZE       IDENTIFIER
-   0:      APFS Container Scheme -                      +239.8 GB   disk2
-                                 Physical Store disk1s2
-   1:                APFS Volume macOS - Data            33.0 GB    disk2s1
-   2:                APFS Volume Preboot                 163.4 MB   disk2s2
-   3:                APFS Volume Recovery                1.0 GB     disk2s3
-   4:                APFS Volume VM                      1.1 GB     disk2s4
-   5:                APFS Volume macOS                   11.3 GB    disk2s5
+   0:      GUID_partition_scheme                        *256.1 GB   disk2
+   1:                        EFI YES                     272.6 MB   disk2s1
+   2:         Microsoft Reserved                         16.8 MB    disk2s2
+   3:       Microsoft Basic Data Windows                 254.1 GB   disk2s3
+   4:           Windows Recovery                         645.9 MB   disk2s4
+   5:           Windows Recovery                         1.0 GB     disk2s5
 
-/dev/disk3 (disk image):
-   #:                       TYPE NAME                    SIZE       IDENTIFIER
-   0:      GUID_partition_scheme                        +23.5 MB    disk3
-   1:                  Apple_HFS HWSensors-3_r240        23.5 MB    disk3s1
-
-Target volume /Volumes/macOS on disk2 is APFS on physical store disk1s2
+Target volume /Volumes/macOS on disk1 is APFS on physical store disk0s2
 ======================================================
 Backing up EFI files
 
-Backing up /Volumes/macOS/EFIROOTDIR/EFI folder to /Volumes/macOS/EFI-Backups/r5121/2020-08-31-16h14/EFI
+Backing up /Volumes/macOS/EFIROOTDIR/EFI folder to /Volumes/macOS/EFI-Backups/r5121/2020-09-05-12h53/EFI
 ======================================================
 Installing BootSectors/BootLoader
 
@@ -44,7 +39,7 @@ Stage 0 - Don't write any of boot0af, boot0md, boot0ss to /
 Stage 1 - Don't write any of boot1h2, boot1f32alt, boot1xalt to /
 
 Removing UEFI/SMCHelper.efi driver because VirtualSMC driver present
-Removing UEFI/AptioMemoryFix.efi because OcQuirks.efi is installed
+Removing UEFI/apfs.efi because ApfsDriverLoader.efi is installed!
 ======================================================
 Installing RC Scripts
 
