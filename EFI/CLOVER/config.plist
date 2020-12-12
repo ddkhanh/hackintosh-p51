@@ -534,6 +534,67 @@
 		<key>InjectKexts</key>
 		<string>Yes</string>
 	</dict>
+	<key>Quirks</key>
+	<dict>
+		<key>AppleXcpmCfgLock</key>
+		<true/>
+		<key>DisableRtcChecksum</key>
+		<true/>
+		<key>AvoidRuntimeDefrag</key>
+		<true/>
+		<key>PowerTimeoutKernelPanic</key>
+		<true/>
+		<key>DisableLinkeditJettison</key>
+		<true/>
+		<key>LegacyCommpage</key>
+		<false/>
+		<key>DisableIoMapper</key>
+		<true/>
+		<key>EnableSafeModeSlide</key>
+		<true/>
+		<key>KernelCache</key>
+		<string>Auto</string>
+		<key>ProvideCustomSlide</key>
+		<true/>
+		<key>AppleXcpmForceBoost</key>
+		<false/>
+		<key>FuzzyMatch</key>
+		<true/>
+		<key>PanicNoKextDump</key>
+		<true/>
+		<key>ProtectSecureBoot</key>
+		<false/>
+		<key>ForceSecureBootScheme</key>
+		<false/>
+		<key>LapicKernelPanic</key>
+		<false/>
+		<key>ProvideConsoleGopEnable</key>
+		<true/>
+		<key>ProtectUefiServices</key>
+		<false/>
+		<key>IncreasePciBarSize</key>
+		<true/>
+		<key>CustomSMBIOSGuid</key>
+		<false/>
+		<key>AppleXcpmExtraMsrs</key>
+		<false/>
+		<key>ProvideMaxSlide</key>
+		<integer>0</integer>
+		<key>AppleCpuPmCfgLock</key>
+		<false/>
+		<key>EnableWriteUnprotector</key>
+		<true/>
+		<key>ExtendBTFeatureFlags</key>
+		<false/>
+		<key>ThirdPartyDrives</key>
+		<false/>
+		<key>SetupVirtualMap</key>
+		<true/>
+		<key>ExternalDiskIcons</key>
+		<false/>
+		<key>XhciPortLimit</key>
+		<true/>
+	</dict>
 	<key>Comment</key>
 	<string>This file is for 10.12.6+ with native KabyLake support</string>
 </dict>
