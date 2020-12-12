@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ACPI</key>
+	<dict>
+		<key>SSDT</key>
+		<dict>
+			<key>DropOem</key>
+			<false/>
+			<key>Generate</key>
+			<dict>
+				<key>PluginType</key>
+				<true/>
+			</dict>
+			<key>NoOemTableId</key>
+			<false/>
+		</dict>
+		<key>AutoMerge</key>
+		<true/>
+		<key>DSDT</key>
+		<dict>
+			<key>Patches</key>
+			<array>
+				<dict>
+					<key>Find</key>
+					<data>RUhDMQ==</data>
+					<key>Replace</key>
+					<data>RUgwMQ==</data>
+					<key>Disabled</key>
+					<false/>
+					<key>Comment</key>
+					<string>change EHC1 to EH01</string>
+				</dict>
+				<dict>
+					<key>Find</key>
+					<data>RUhDMg==</data>
+					<key>Replace</key>
+					<data>RUgwMg==</data>
+					<key>Disabled</key>
+					<false/>
+					<key>Comment</key>
+					<string>change EHC2 to EH02</string>
+				</dict>
+				<dict>
+					<key>Find</key>
+					<data>WEhDSQ==</data>
+					<key>Replace</key>
+					<data>WEhDXw==</data>
+					<key>Disabled</key>
+					<false/>
+					<key>Comment</key>
+					<string>Rename XHCI to XHC (USB)</string>
+				</dict>
+				<dict>
+					<key>Find</key>
+					<data>WEhDMQ==</data>
+					<key>Replace</key>
+					<data>WEhDXw==</data>
+					<key>Disabled</key>
+					<false/>
+					<key>Comment</key>
+					<string>Rename XHC1 to XHC (USB)</string>
+				</dict>
+				<dict>
+					<key>Find</key>
+					<data>X09TSQ==</data>
+					<key>Replace</key>
+					<data>WE9TSQ==</data>
+					<key>Disabled</key>
+					<false/>
+					<key>Comment</key>
+					<string>change _OSI to XOSI</string>
+				</dict>
+			</array>
+			<key>SuspendOverride</key>
+			<true/>
+			<key>Fixes</key>
+			<dict>
+				<key>FixHPET</key>
+				<false/>
+				<key>FixRTC</key>
+				<false/>
+				<key>FixTMR</key>
+				<false/>
+				<key>AddPNLF</key>
+				<false/>
+				<key>FixUSB</key>
+				<false/>
+				<key>FixShutdown</key>
+				<false/>
+				<key>FixIPIC</key>
+				<false/>
+				<key>Comment-IRQ Fix</key>
+				<string>The following fixes may be needed for onboard audio/USB/etc</string>
+			</dict>
+			<key>DropOEM_DSM</key>
+			<false/>
+			<key>ReuseFFFF</key>
+			<true/>
+		</dict>
+		<key>Comment-DisabledAML</key>
+		<string>Disable other forms of CPU PM due to SSDT/Generate/PluginType=true</string>
+		<key>DisabledAML</key>
+		<array>
+			<string>SSDT.aml</string>
+			<string>SSDT-XCPM.aml</string>
+			<string>SSDT-PluginType1.aml</string>
+		</array>
+		<key>FixHeaders</key>
+		<true/>
+	</dict>
+	<key>Boot</key>
+	<dict>
+		<key>#DefaultVolume</key>
+		<string>LastBootedVolume</string>
+		<key>DefaultVolume</key>
+		<string>LastBootedVolume</string>
+		<key>Arguments</key>
+		<string>dart=0</string>
+		<key>NeverHibernate</key>
+		<true/>
+		<key>Secure</key>
+		<false/>
+		<key>Timeout</key>
+		<integer>5</integer>
+	</dict>
+	<key>GUI</key>
+	<dict>
+		<key>ScreenResolution</key>
+		<string>1920x1080</string>
+		<key>Language</key>
+		<string>en-US:0</string>
+		<key>Hide</key>
+		<array>
+			<string>Preboot</string>
+			<string>Ubuntu</string>
+			<string>Recovery</string>
+		</array>
+		<key>Custom</key>
+		<dict>
+			<key>Entries</key>
+			<array>
+				<dict>
+					<key>NoCaches</key>
+					<false/>
+					<key>Type</key>
+					<string>OSXRecovery</string>
+					<key>Hidden</key>
+					<false/>
+					<key>Disabled</key>
+					<false/>
+					<key>Ignore</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>Type</key>
+					<string>Windows</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Title</key>
+					<string>Windows</string>
+					<key>Ignore</key>
+					<false/>
+				</dict>
+			</array>
+		</dict>
+		<key>Scan</key>
+		<dict>
+			<key>Tool</key>
+			<true/>
+			<key>Entries</key>
+			<true/>
+			<key>Legacy</key>
+			<false/>
+			<key>Linux</key>
+			<true/>
+		</dict>
+		<key>#ScreenResolution</key>
+		<string>1920x1080</string>
+		<key>Mouse</key>
+		<dict>
+			<key>Enabled</key>
+			<true/>
+			<key>DoubleClick</key>
+			<integer>1</integer>
+		</dict>
+		<key>EmbeddedThemeType</key>
+		<string>Dark</string>
+		<key>Theme</key>
+		<string>Apocalypse</string>
+	</dict>
+	<key>Devices</key>
+	<dict>
+		<key>SetIntelMaxBacklight</key>
+		<false/>
+		<key>FakeID</key>
+		<dict>
+			<key>#Kaby Lake-Comment</key>
+			<string>To avoid automatic Clover fake device-id (Skylake) injection</string>
+		</dict>
+		<key>Properties</key>
+		<dict>
+			<key>PciRoot(0x0)/Pci(0x1C,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,28,0</string>
+				<key>device_type</key>
+				<string>PCI bridge</string>
+				<key>model</key>
+				<string>100 Series/C230 Series Chipset Family PCI Express Root Port #1</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x17,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,23,0</string>
+				<key>device_type</key>
+				<string>SATA controller</string>
+				<key>model</key>
+				<string>Q170/Q150/B150/H170/H110/Z170/CM236 Chipset SATA Controller [AHCI Mode]</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1C,0x2)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,28,2/0,0</string>
+				<key>device_type</key>
+				<string>Network controller</string>
+				<key>model</key>
+				<string>Wireless 8265 / 8275</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1D,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,29,0</string>
+				<key>device_type</key>
+				<string>PCI bridge</string>
+				<key>model</key>
+				<string>100 Series/C230 Series Chipset Family PCI Express Root Port #9</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1F,0x6)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,31,6</string>
+				<key>device_type</key>
+				<string>Ethernet controller</string>
+				<key>model</key>
+				<string>Ethernet Connection (5) I219-V</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x8,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,8,0</string>
+				<key>device_type</key>
+				<string>System peripheral</string>
+				<key>model</key>
+				<string>Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th/8th Gen Core Processor Gaussian Mixture Model</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
+			<dict>
+				<key>AAPL,GfxYTile</key>
+				<data>AQAAAA==</data>
+				<key>device-id</key>
+				<data>G1kAAA==</data>
+				<key>disable-external-gpu</key>
+				<data>AQAAAA==</data>
+				<key>device_type</key>
+				<string>VGA compatible controller</string>
+				<key>hda-gfx</key>
+				<string>onboard-1</string>
+				<key>framebuffer-patch-enable</key>
+				<data>AQAAAA==</data>
+				<key>enable-hdmi20</key>
+				<data>AQAAAA==</data>
+				<key>AAPL00,override-no-connect</key>
+				<data>AP///////wAw5HycAAAAAAAbAQSVIhNg6m+xp1VMniUMUFQAAAABAQEBAQEBAQEBAQEBAQEBLjaAoHA4H0AwIDUAWMIQAAAatiyA9HA4FkAwIDUAWMIQAAAaAAAA/gBMRyBEaXNwbGF5CiAgAAAA/gBMUDE1NldGNi1TUEs2AB8=</data>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,2,0</string>
+				<key>AAPL,ig-platform-id</key>
+				<data>AAAbWQ==</data>
+				<key>model</key>
+				<string>Intel HD Graphics 630</string>
+				<key>framebuffer-unifiedmem</key>
+				<data>AAAAgA==</data>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x14,0x2)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,20,2</string>
+				<key>device_type</key>
+				<string>Signal processing controller</string>
+				<key>model</key>
+				<string>100 Series/C230 Series Chipset Family Thermal Subsystem</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1F,0x4)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,31,4</string>
+				<key>device_type</key>
+				<string>SMBus</string>
+				<key>model</key>
+				<string>100 Series/C230 Series Chipset Family SMBus</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>model</key>
+				<string>GM107GLM [Quadro M1200 Mobile]</string>
+				<key>hda-gfx</key>
+				<string>onboard-2</string>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,1,0/0,0</string>
+				<key>device_type</key>
+				<string>3D controller</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x14,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,20,0</string>
+				<key>device_type</key>
+				<string>USB controller</string>
+				<key>model</key>
+				<string>100 Series/C230 Series Chipset Family USB 3.0 xHCI Controller</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,1,0</string>
+				<key>device_type</key>
+				<string>PCI bridge</string>
+				<key>model</key>
+				<string>Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor PCIe Controller (x16)</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1F,0x2)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,31,2</string>
+				<key>device_type</key>
+				<string>Memory controller</string>
+				<key>model</key>
+				<string>100 Series/C230 Series Chipset Family Power Management Controller</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1F,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,31,0</string>
+				<key>device_type</key>
+				<string>ISA bridge</string>
+				<key>model</key>
+				<string>CM238 Chipset LPC/eSPI Controller</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,0,0</string>
+				<key>device_type</key>
+				<string>Host bridge</string>
+				<key>model</key>
+				<string>Xeon E3-1200 v6/7th Gen Core Processor Host Bridge/DRAM Registers</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x15,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,21,0</string>
+				<key>device_type</key>
+				<string>Signal processing controller</string>
+				<key>model</key>
+				<string>100 Series/C230 Series Chipset Family Serial IO I2C Controller #0</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1D,0x0)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,29,0/0,0</string>
+				<key>device_type</key>
+				<string>Non-Volatile memory controller</string>
+				<key>model</key>
+				<string>NVMe SSD Controller SM981/PM981/PM983</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x1)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,1,0/0,1</string>
+				<key>device_type</key>
+				<string>Audio device</string>
+				<key>model</key>
+				<string>GM107 High Definition Audio Controller [GeForce 940MX]</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x16,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,22,0</string>
+				<key>device_type</key>
+				<string>Communication controller</string>
+				<key>model</key>
+				<string>100 Series/C230 Series Chipset Family MEI Controller #1</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1C,0x2)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,28,2</string>
+				<key>device_type</key>
+				<string>PCI bridge</string>
+				<key>model</key>
+				<string>100 Series/C230 Series Chipset Family PCI Express Root Port #3</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
+			<dict>
+				<key>layout-id</key>
+				<data>HQAAAA==</data>
+				<key>model</key>
+				<string>CM238 HD Audio Controller</string>
+				<key>hda-gfx</key>
+				<string>onboard-2</string>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,31,3</string>
+				<key>device_type</key>
+				<string>Audio device</string>
+			</dict>
+		</dict>
+		<key>Audio</key>
+		<dict>
+			<key>Inject</key>
+			<string>No</string>
+		</dict>
+		<key>USB</key>
+		<dict>
+			<key>AddClockID</key>
+			<true/>
+			<key>FixOwnership</key>
+			<true/>
+			<key>Inject</key>
+			<true/>
+		</dict>
+		<key>SetIntelBacklight</key>
+		<false/>
+	</dict>
+	<key>DisableDrivers</key>
+	<array>
+		<string>VBoxHfs</string>
+	</array>
+	<key>Graphics</key>
+	<dict>
+		<key>EDID</key>
+		<dict>
+			<key>Inject</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>KernelAndKextPatches</key>
+	<dict>
+		<key>KernelPm</key>
+		<true/>
+		<key>AppleRTC</key>
+		<true/>
+		<key>DellSMBIOSPatch</key>
+		<false/>
+		<key>KextsToPatch</key>
+		<array>
+			<dict>
+				<key>Find</key>
+				<data>AEFQUExFIFNTRAA=</data>
+				<key>Name</key>
+				<string>com.apple.iokit.IOAHCIBlockStorage</string>
+				<key>Replace</key>
+				<data>AAAAAAAAAAAAAAA=</data>
+				<key>Disabled</key>
+				<true/>
+				<key>Comment</key>
+				<string>Enable TRIM for SSD</string>
+				<key>InfoPlistPatch</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Find</key>
+				<data>g/sPDw==</data>
+				<key>Comment</key>
+				<string>USB Port limit patch #1/2 10.15.x (credit DalianSky)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.iokit.IOUSBHostFamily</string>
+				<key>Replace</key>
+				<data>g/s/Dw==</data>
+				<key>MatchOS</key>
+				<string>10.15.x</string>
+			</dict>
+			<dict>
+				<key>Find</key>
+				<data>g/kPDw==</data>
+				<key>Comment</key>
+				<string>USB Port limit patch #2/2 10.15.x (credit DalianSky)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>g/k/Dw==</data>
+				<key>MatchOS</key>
+				<string>10.15.x</string>
+			</dict>
+		</array>
+		<key>KernelLapic</key>
+		<true/>
+	</dict>
+	<key>RtVariables</key>
+	<dict>
+		<key>ROM</key>
+		<string>UseMacAddr0</string>
+		<key>BooterConfig</key>
+		<string>0x28</string>
+		<key>CsrActiveConfig</key>
+		<string>0x3E7</string>
+	</dict>
+	<key>SMBIOS</key>
+	<dict>
+		<key>FirmwareFeatures</key>
+		<string>0xFC0FE17E</string>
+		<key>Board-ID</key>
+		<string>Mac-551B86E5744E2388</string>
+		<key>FirmwareFeaturesMask</key>
+		<string>0xFF1FFF7F</string>
+		<key>BoardVersion</key>
+		<string>1.0</string>
+		<key>Manufacturer</key>
+		<string>Apple Inc.</string>
+		<key>ChassisType</key>
+		<string>0x09</string>
+		<key>BiosVersion</key>
+		<string>MBP143.88Z.F000.B00.2006161755</string>
+		<key>BoardManufacturer</key>
+		<string>Apple Inc.</string>
+		<key>ChassisAssetTag</key>
+		<string>MacBook-Aluminum</string>
+		<key>PlatformFeature</key>
+		<string>0x1A</string>
+		<key>Family</key>
+		<string>MacBook Pro</string>
+		<key>ChassisManufacturer</key>
+		<string>Apple Inc.</string>
+		<key>BoardSerialNumber</key>
+		<string>C02840902J9J1JHJA</string>
+		<key>BiosVendor</key>
+		<string>Apple Inc.</string>
+		<key>ProductName</key>
+		<string>MacBookPro14,3</string>
+		<key>SmUUID</key>
+		<string>363B1B67-5AEA-4775-9477-A3B858A1FDC2</string>
+		<key>Mobile</key>
+		<true/>
+		<key>BoardType</key>
+		<integer>10</integer>
+		<key>EfiVersion</key>
+		<string>428.0.0.0.0</string>
+		<key>SerialNumber</key>
+		<string>C02XHVZJHTD5</string>
+		<key>LocationInChassis</key>
+		<string>Part Component</string>
+		<key>BiosReleaseDate</key>
+		<string>06/16/2020</string>
+		<key>Version</key>
+		<string>1.0</string>
+	</dict>
+	<key>SystemParameters</key>
+	<dict>
+		<key>InjectSystemID</key>
+		<true/>
+		<key>CustomUUID</key>
+		<string>CDE07CA7-2701-5618-B778-0964CDB739B0</string>
+		<key>InjectKexts</key>
+		<string>Yes</string>
+	</dict>
+	<key>Comment</key>
+	<string>This file is for 10.12.6+ with native KabyLake support</string>
+</dict>
+</plist>
